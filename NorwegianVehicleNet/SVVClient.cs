@@ -11,6 +11,6 @@ namespace NorwegianVehicleNet
     {
         private const string SvvBaseUriString = "http://www.vegvesen.no/system/mobilapi?registreringsnummer=";
 
-        private XDocument GetXmlDocument()
+        //private XDocument GetXmlDocument();
     }
 }
