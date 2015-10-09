@@ -37,6 +37,8 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car\Car.cs" />
+    <Compile Include="Car\Engine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Car\RegistrationNumber.cs" />
     <Compile Include="SVVClient.cs" />
