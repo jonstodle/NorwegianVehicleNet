@@ -9,8 +9,10 @@ namespace NorwegianVehicleNet.Car
 {
     public class RegistrationNumber
     {
-        private const string LettersRegexPattern = "[a-z|A-Z]{1,2}";
-        private const string digitsRegexPattern = @"\d{4,5}";
+        private const string CorrectLettersRegexPattern = "[a-z|A-Z]{1,2}";
+        private const string CorrectDigitsRegexPattern = @"\d{4,5}";
+        private const string FindLettersRegexPattern = "[a-z|A-Z]*";
+        private const string FindDigitsRegexPattern = @"\d*";
 
         private const string InvalidLettersErrorMessage = "Invalid letters";
         private const string InvalidDigitsErrorMessage = "Invalid digits";
@@ -36,8 +38,8 @@ namespace NorwegianVehicleNet.Car
         /// <param name="registration">A string containing both letters and digits representing a registration number</param>
         public RegistrationNumber(string registration)
         {
-            var letters = Regex.Match(registration, LettersRegexPattern).Value;
-            var digits = int.Parse(Regex.Match(registration, digitsRegexPattern).Value);
+            var letters = Regex.Match(registration, FindLettersRegexPattern).Value;
+            var digits = int.Parse(Regex.Match(registration, FindDigitsRegexPattern).Value);
 
             if (IsValidLetters(letters)) throw new ArgumentException(InvalidLettersErrorMessage);
 
@@ -52,14 +54,14 @@ namespace NorwegianVehicleNet.Car
         /// </summary>
         /// <param name="letters">A string to check</param>
         /// <returns>A bool indicating whether the letters are valid</returns>
-        private bool IsValidLetters(string letters) => Regex.Match(letters, LettersRegexPattern).Value != letters;
+        private bool IsValidLetters(string letters) => Regex.Match(letters, CorrectLettersRegexPattern).Value != letters;
 
         /// <summary>
         /// Check whether an int only contains valid registration number digits
         /// </summary>
         /// <param name="digits">An int to check</param>
         /// <returns>A bool indicating whether the digits are valid</returns>
-        private bool IsValidDigits(int digits) => Regex.Match(digits.ToString(), digitsRegexPattern).Value != digits.ToString();
+        private bool IsValidDigits(int digits) => Regex.Match(digits.ToString(), CorrectDigitsRegexPattern).Value != digits.ToString();
 
         public string Letters { get; private set; }
         public int digits { get; private set; }
