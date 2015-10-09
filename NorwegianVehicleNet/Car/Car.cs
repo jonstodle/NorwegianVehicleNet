@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NorwegianVehicleNet.Car
 {
-    class Car
+    public class Car
     {
         public enum FuelTypes { Gasoline, Diesel, Electricity };
 
