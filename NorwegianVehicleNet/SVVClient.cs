@@ -1,4 +1,4 @@
-﻿using NorwegianVehicleNet.Car;
+﻿using NorwegianVehicleNet.Vehicle;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +9,15 @@ using System.Xml.Linq;
 
 namespace NorwegianVehicleNet
 {
-    public sealed class SVVClient
+    public sealed class SvvClient
     {
         private const string SvvBaseUriString = "http://www.vegvesen.no/system/mobilapi?registreringsnummer=";
+
+		public async Task<Car> GetCarAsync(RegistrationNumber registrationNumber)
+		{
+			var xDoc = await GetXmlDocumentAsync(registrationNumber);
+
+		}
 
         /// <summary>
         /// Gets the xml representation of a car
