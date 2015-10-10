@@ -10,7 +10,9 @@ namespace NorwegianVehicleNet.Vehicle
     {
         public enum FuelTypes { Gasoline, Diesel, Electricity };
 
-        public string Merke { get; set; }
+		public DateTime? Tidspunkt { get; set; }
+		public DateTime? NesteOppdatering { get; set; }
+		public string Merke { get; set; }
         public string Modell { get; set; }
         public string Brukstypegruppe { get; set; }
         public string Brukstypeikon { get; set; }
