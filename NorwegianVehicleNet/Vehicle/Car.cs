@@ -14,7 +14,8 @@ namespace NorwegianVehicleNet.Vehicle
 		public DateTime? NesteOppdatering { get; set; }
 		public string Merke { get; set; }
         public string Modell { get; set; }
-        public string Brukstypegruppe { get; set; }
+		public string Type { get; set; }
+		public string Brukstypegruppe { get; set; }
         public string Brukstypeikon { get; set; }
         public string Farge { get; set; }
         public string Kjoretoysklasse { get; set; }
