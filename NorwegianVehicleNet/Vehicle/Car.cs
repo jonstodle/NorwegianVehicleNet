@@ -8,8 +8,6 @@ namespace NorwegianVehicleNet.Vehicle
 {
     public class Car
     {
-        public enum FuelTypes { Gasoline, Diesel, Electricity };
-
 		public DateTime? Tidspunkt { get; set; }
 		public DateTime? NesteOppdatering { get; set; }
 		public string Merke { get; set; }
@@ -21,7 +19,7 @@ namespace NorwegianVehicleNet.Vehicle
         public string Kjoretoysklasse { get; set; }
         public int? Seter { get; set; }
         public int? Staaplasser { get; set; }
-        public FuelTypes? DrivstoffType { get; set; }
+        public string DrivstoffType { get; set; }
         public Engine Motor { get; set; }
         public int? AkslerMedDrift { get; set; }
         public int? EgenvektMedForer { get; set; }
